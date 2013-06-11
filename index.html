@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="formApp">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>formContact</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+</head>
+<body class="container-fluid" ng-controller="formController">
+
+<section class="row-fluid" >
+
+    <form novalidate class="form-horizontal" name="formContact">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Form Name</legend>
+
+            <!-- Text input-->
+            <div class="control-group" ng-class="{error : formContact.inputMail.$dirty && formContact.inputMail.$invalid}">
+              <label class="control-label" for="inputMail">Mail :</label>
+              <div class="controls">
+                <input id="inputMail" name="inputMail" type="email" placeholder="exemple@sporeka.com" class="input-large" required ng-model="inputMail">
+                <p class="help-block" ng-show="formContact.inputMail.$error.email">Le format de votre email n'est pas valide</p>
+                <p class="help-block" ng-show="formContact.inputMail.$error.$dirty">Le champ est obligatoire</p>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="control-group" ng-class="{error : formContact.inputNom.$dirty && formContact.inputNom.$invalid}">
+              <label class="control-label" for="inputNom">Nom :</label>
+              <div class="controls">
+                <input id="inputNom" name="inputNom" type="text" placeholder="Dupont" class="input-large" required ng-minlength="2" ng-model="inputNom">
+                <p class="help-block" ng-show="formContact.inputNom.$dirty && formContact.inputNom..$error.required">Le nom est requis</p>
+                <p class="help-block" ng-show="formContact.inputNom.$error.minlength">Vous ne pouvez pas mettre moins de 2 caractères</p>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="control-group" ng-class="{error : formContact.inputFirstName.$dirty && formContact.inputFirstName.$invalid}">
+              <label class="control-label" for="inputFirstName">Prénom</label>
+              <div class="controls">
+                <input id="inputFirstName" name="inputFirstName" type="text" placeholder="Jean" class="input-large" required min="2" ng-model="inputFirstName">
+                <p class="help-block" ng-show="formContact.inputFirstName.$error.minlength">Vous ne pouvez pas mettre moins de 2 caractères</p>
+
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="control-group">
+              <label class="control-label" for="inputOffice">Poste</label>
+              <div class="controls">
+                <input id="inputOffice" name="inputOffice" type="text" placeholder="RH" class="input-large">
+                
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="control-group">
+              <label class="control-label" for="inputCompany">Société</label>
+              <div class="controls">
+                <input id="inputCompany" name="inputCompany" type="text" placeholder="Sporeka" class="input-large" required>
+                
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="control-group">
+              <label class="control-label" for="inputTelephone">Téléphone</label>
+              <div class="controls">
+                <input id="inputTelephone" name="inputTelephone" type="text" placeholder="0245678743" class="input-large" required>
+                
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="control-group">
+              <label class="control-label" for="inputSubject">Sujet</label>
+              <div class="controls">
+                <input id="inputSubject" name="inputSubject" type="text" placeholder="Demande d'information" class="input-large" required>
+                
+              </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="control-group">
+              <label class="control-label" for="inputMessage">Message</label>
+              <div class="controls">                     
+                <textarea id="inputMessage" name="inputMessage"></textarea>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="control-group">
+              <label class="control-label" for="inputSubmit"></label>
+              <div class="controls">
+                <button id="inputSubmit" name="inputSubmit" class="btn btn-warning" ng-disabled="formContact.$invalid">&gt; Envoyer</button>
+              </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+
+</section>
+
+<script type="text/javascript" src="assets/js/angular.js"></script>
+<script type="text/javascript" src="assets/js/contact.js"></script>
+
+</body>
+</html>

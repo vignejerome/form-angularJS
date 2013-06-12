@@ -1,6 +1,6 @@
-var formApp = angular.module('formApp', []);
+angular.module("contactForm", []).controller("formController", function() {
 
-formApp.controller('formController', function($scope, $http){
-
-
+	
 });
+
+angular.bootstrap(document.getElementById("formId"), ["contactForm"]);

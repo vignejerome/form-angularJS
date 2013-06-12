@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="formApp">
+<html>
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
     <title>formContact</title>
     <link rel="stylesheet" href="assets/css/bootstrap.css"/>
 </head>
-<body class="container-fluid" ng-controller="formController">
+<body class="container-fluid" id="formId" ng-controller="formController" >
 
 <section class="row-fluid" >
 
@@ -17,7 +17,7 @@
             <legend>Form Name</legend>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputMail.$dirty}">
+            <div class="control-group" ng-class="{error : formContact.inputMail.$dirty && formContact.inputMail.$error.required || formContact.inputMail.$error.email}">
               <label class="control-label" for="inputMail">Mail :</label>
               <div class="controls">
                 <input id="inputMail" name="inputMail" type="email" placeholder="exemple@sporeka.com" class="input-large" required ng-model="inputMail">
@@ -27,7 +27,7 @@
             </div>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputNom.$dirty }">
+            <div class="control-group" ng-class="{error : formContact.inputNom.$dirty && formContact.inputNom.$error.required || formContact.inputNom.$error.minlength }">
               <label class="control-label" for="inputNom">Nom :</label>
               <div class="controls">
                 <input id="inputNom" name="inputNom" type="text" placeholder="Dupont" class="input-large" required ng-minlength="2" ng-model="inputNom">
@@ -37,7 +37,7 @@
             </div>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputFirstName.$dirty}">
+            <div class="control-group" ng-class="{error : formContact.inputFirstName.$dirty && formContact.inputFirstName.$error.required || formContact.inputFirstName.$error.minlength}">
               <label class="control-label" for="inputFirstName">Prénom</label>
               <div class="controls">
                 <input id="inputFirstName" name="inputFirstName" type="text" placeholder="Jean" class="input-large" required ng-minlength="2" ng-model="inputFirstName">
@@ -56,7 +56,7 @@
             </div>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputCompany.$dirty && formContact.inputCompany.$invalid}">
+            <div class="control-group" ng-class="{error : formContact.inputCompany.$dirty && formContact.inputCompany.$error.required}">
               <label class="control-label" for="inputCompany">Société</label>
               <div class="controls">
                 <input id="inputCompany" name="inputCompany" type="text" placeholder="Sporeka" class="input-large" required ng-model="inputCompany">
@@ -65,7 +65,7 @@
             </div>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputTelephone.$dirty}">
+            <div class="control-group" ng-class="{error : formContact.inputTelephone.$dirty && formContact.inputTelephone.$error.required}">
               <label class="control-label" for="inputTelephone">Téléphone</label>
               <div class="controls">
                 <input id="inputTelephone" name="inputTelephone" type="text" placeholder="0245678743" class="input-large" required ng-model="inputTelephone">
@@ -74,7 +74,7 @@
             </div>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputSubject.$dirty }">
+            <div class="control-group" ng-class="{error : formContact.inputSubject.$dirty && formContact.inputSubject.$error.required}">
               <label class="control-label" for="inputSubject">Sujet</label>
               <div class="controls">
                 <input id="inputSubject" name="inputSubject" type="text" placeholder="Demande d'information" class="input-large" required ng-model="inputSubject">
@@ -83,7 +83,7 @@
             </div>
 
             <!-- Textarea -->
-            <div class="control-group" ng-class="{error : formContact.inputMessage.$dirty}">
+            <div class="control-group" ng-class="{error : formContact.inputMessage.$dirty && formContact.inputMessage.$error.required}">
               <label class="control-label" for="inputMessage">Message</label>
               <div class="controls">                     
                 <textarea id="inputMessage" name="inputMessage" ng-model="inputMessage" required></textarea>

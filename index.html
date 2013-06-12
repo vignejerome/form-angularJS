@@ -17,30 +17,32 @@
             <legend>Form Name</legend>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputMail.$dirty && formContact.inputMail.$invalid}">
+            <div class="control-group" ng-class="{error : formContact.inputMail.$dirty}">
               <label class="control-label" for="inputMail">Mail :</label>
               <div class="controls">
                 <input id="inputMail" name="inputMail" type="email" placeholder="exemple@sporeka.com" class="input-large" required ng-model="inputMail">
                 <p class="help-block" ng-show="formContact.inputMail.$error.email">Le format de votre email n'est pas valide</p>
+                <p class="help-block" ng-show="formContact.inputMail.$dirty && formContact.inputMail.$error.required">Le champ est requis</p>
               </div>
             </div>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputNom.$dirty && formContact.inputNom.$invalid}">
+            <div class="control-group" ng-class="{error : formContact.inputNom.$dirty }">
               <label class="control-label" for="inputNom">Nom :</label>
               <div class="controls">
                 <input id="inputNom" name="inputNom" type="text" placeholder="Dupont" class="input-large" required ng-minlength="2" ng-model="inputNom">
                 <p class="help-block" ng-show="formContact.inputNom.$error.minlength">Vous ne pouvez pas mettre moins de 2 caractères</p>
+                <p class="help-block" ng-show="formContact.inputNom.$dirty && formContact.inputNom.$error.required">Le champ est requis</p>
               </div>
             </div>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputFirstName.$dirty && formContact.inputFirstName.$invalid}">
+            <div class="control-group" ng-class="{error : formContact.inputFirstName.$dirty}">
               <label class="control-label" for="inputFirstName">Prénom</label>
               <div class="controls">
                 <input id="inputFirstName" name="inputFirstName" type="text" placeholder="Jean" class="input-large" required ng-minlength="2" ng-model="inputFirstName">
                 <p class="help-block" ng-show="formContact.inputFirstName.$error.minlength">Vous ne pouvez pas mettre moins de 2 caractères</p>
-
+                <p class="help-block" ng-show="formContact.inputFirstName.$dirty && formContact.inputFirstName.$error.required">Le champ est requis</p>
               </div>
             </div>
 
@@ -58,33 +60,36 @@
               <label class="control-label" for="inputCompany">Société</label>
               <div class="controls">
                 <input id="inputCompany" name="inputCompany" type="text" placeholder="Sporeka" class="input-large" required ng-model="inputCompany">
-                
+                <p class="help-block" ng-show="formContact.inputCompany.$dirty && formContact.inputCompany.$error.required">Le champ est requis</p>
               </div>
             </div>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputTelephone.$dirty && formContact.inputTelephone.$invalid}">
+            <div class="control-group" ng-class="{error : formContact.inputTelephone.$dirty}">
               <label class="control-label" for="inputTelephone">Téléphone</label>
               <div class="controls">
                 <input id="inputTelephone" name="inputTelephone" type="text" placeholder="0245678743" class="input-large" required ng-model="inputTelephone">
-                
+                <p class="help-block" ng-show="formContact.inputTelephone.$dirty && formContact.inputTelephone.$error.required">Le champ est requis</p>
               </div>
             </div>
 
             <!-- Text input-->
-            <div class="control-group" ng-class="{error : formContact.inputSubject.$dirty && formContact.inputSubject.$invalid}">
+            <div class="control-group" ng-class="{error : formContact.inputSubject.$dirty }">
               <label class="control-label" for="inputSubject">Sujet</label>
               <div class="controls">
                 <input id="inputSubject" name="inputSubject" type="text" placeholder="Demande d'information" class="input-large" required ng-model="inputSubject">
+                <p class="help-block" ng-show="formContact.inputSubject.$dirty && formContact.inputSubject.$error.required">Le champ est requis</p>
               </div>
             </div>
 
             <!-- Textarea -->
-            <div class="control-group" ng-class="{error : formContact.inputMessage.$dirty && formContact.inputMessage.$invalid}">
+            <div class="control-group" ng-class="{error : formContact.inputMessage.$dirty}">
               <label class="control-label" for="inputMessage">Message</label>
               <div class="controls">                     
                 <textarea id="inputMessage" name="inputMessage" ng-model="inputMessage" required></textarea>
+                <p class="help-block" ng-show="formContact.inputMessage.$dirty && formContact.inputMessage.$error.required">Le champ est requis</p>
               </div>
+              
             </div>
 
             <!-- Button -->
